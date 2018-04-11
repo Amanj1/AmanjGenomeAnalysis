@@ -1,4 +1,4 @@
-# AmanjGenomeAnalysis
+# Genome Analysis course 
 
 ## Project Plan in activity diagram format
 
