@@ -1,4 +1,4 @@
-# Genome Analysis course 
+# Genome Analysis 
 
 ## Project Plan in activity diagram format
 
