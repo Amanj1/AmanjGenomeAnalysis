@@ -1,0 +1,25 @@
+#!/bin/bash -L
+
+#SBATCH - A g2018003
+#SBATCH - p core
+#SBATCH - n 2
+#SBATCH - t 00:10:00     #Tiden?
+#SBATCH - J RNA_raw_read_quality
+#SBATCH -- mail-type=ALL
+#SBATCH -- mail-user amanj.bajalan.6489@student.uu.se
+
+# Load modules
+module load bioinfo-tools
+#FIND MODULE FOR Trimmomatic
+
+# Commands
+
+java-jar trimmomatic-0.30.jar SE s_1_1_sequence.txt.gz lane1_forward.fq.gz 
+ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 
+MIN LEN:36
+
+
+
+
+
+http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
