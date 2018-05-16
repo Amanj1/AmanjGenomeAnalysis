@@ -1,0 +1,36 @@
+ 
+[amanj@r34 HTSeq]$ cp /home/amanj/amanj/maker/augustus_results/NW_015504334%2E1.gff NW_015504334%2E1.gff
+[amanj@r34 HTSeq]$ ls
+HTseq_output.txt  HTSeq.sh  NW_015504334%2E1.gff
+[amanj@r34 HTSeq]$ head NW_015504334%2E1.gff 
+##gff-version 3
+NW_015504334.1  .       contig  1       2366763 .       .       .       ID=NW_015504334.1;Name=NW_015504334.1
+NW_015504334.1  maker   gene    1923    10800   .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10;Name=augustus_masked-NW_015504334.1-processed-gene-0.10
+NW_015504334.1  maker   mRNA    1923    10800   .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10;Name=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;_AED=0.24;_eAED=0.24;_QI=0|0|0|0.66|1|1|3|0|102
+NW_015504334.1  maker   exon    1923    1956    .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:1;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   exon    8689    8798    .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:2;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   exon    10636   10800   .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:3;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   CDS     1923    1956    .       +       0       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:cds;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   CDS     8689    8798    .       +       2       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:cds;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   CDS     10636   10800   .       +       0       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:cds;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+[amanj@r34 HTSeq]$ head NW_015504334%2E1.gff | sed 's/-1:[0-9]*;/-1;/'
+##gff-version 3
+NW_015504334.1  .       contig  1       2366763 .       .       .       ID=NW_015504334.1;Name=NW_015504334.1
+NW_015504334.1  maker   gene    1923    10800   .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10;Name=augustus_masked-NW_015504334.1-processed-gene-0.10
+NW_015504334.1  maker   mRNA    1923    10800   .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10;Name=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;_AED=0.24;_eAED=0.24;_QI=0|0|0|0.66|1|1|3|0|102
+NW_015504334.1  maker   exon    1923    1956    .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   exon    8689    8798    .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   exon    10636   10800   .       +       .       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   CDS     1923    1956    .       +       0       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:cds;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   CDS     8689    8798    .       +       2       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:cds;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+NW_015504334.1  maker   CDS     10636   10800   .       +       0       ID=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1:cds;Parent=augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1
+[amanj@r34 HTSeq]$ sed -i 's/-1:[0-9]*;/-1;/' NW_015504334%2E1.gff
+
+
+# Load modules
+module load bioinfo-tools
+module load htseq/0.9.1
+
+# Commands
+htseq-count -i ID -f bam -s no /home/amanj/amanj/TopHat/tophat_out_dir/*/accepted_hits.bam NW_015504334%2E1.gff > HTseq_output.txt
+
