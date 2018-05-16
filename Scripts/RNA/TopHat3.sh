@@ -2,9 +2,9 @@
 
 #SBATCH -A g2018003
 #SBATCH -p core
-#SBATCH -n 2
+#SBATCH -n 4
 #SBATCH -t 06:00:00
-#SBATCH -J RNA_mapping_TopHat
+#SBATCH -J RNA_mapping_TopHat_NewRUN
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user amanj.bajalan.6489@student.uu.se
 
@@ -13,7 +13,7 @@ module load bioinfo-tools
 module load tophat/2.1.1
 
 # Commands
-#bowtie2-build sel2_NW_015504334.fna sel2_SRR
+bowtie2-build sel2_NW_015504334.fna sel2_SRR
 
 tophat -p 4 -o tophat_out_dir/sel2_SRR1719013_thout sel2_SRR sel2_SRR1719013_1P.fq sel2_SRR1719013_2P.fq
      
