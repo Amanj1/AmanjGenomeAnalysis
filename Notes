@@ -1,0 +1,107 @@
+ 
+[amanj@r34 incRNA]$ head NW_015504334%2E1.maker.transcripts.fasta
+>augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1 transcript offset:0 AED:0.24 eAED:0.24 QI:0|0|0|0.66|1|1|3|0|102
+ATGGCCCCGACACCCTCAGAGACAGGAAGCTGTGGGCAGGAAGACTACGACCGGCTGCGG
+CCCCTCTCCTACCAGAACACCCACCTTGTGCTCATCTGCTATGACGTCATGAACCCCACC
+AGCTATGACAATGTCCTGGTCAAGGGCCTGAGCACCTGCCAGCAAATCCGAGCCGCCCTC
+TACCTGGAATGTTCCGCCAAGTTTCGGGAGAACGTGGAGGACGTCTTCCGGGAGGCCGCC
+AAGGTGGCCCTGAGCTCCCTGAAGAAGGCGCAGCGGCAGAAACACCAGCGGCGCTGCCTG
+CTGCTCTGA
+>maker-NW_015504334.1-augustus-gene-0.1-mRNA-1 transcript offset:0 AED:0.08 eAED:0.08 QI:0|0|0|1|1|1|5|0|229
+ATGCCTATCTCCAAGTGCCCACAGAAGTCGGAGCCCCTGTGGAAGGCATGGGACCGAAAG
+GCCCAGAAGAACGGACAGAGACACCAGGTGTATGCTGTCAATGGTGACCGCTACGTGGGC
+[amanj@r34 incRNA]$ cd ..
+[amanj@r34 amanj]$ ls
+CHIP  HTSeq  incRNA  maker  MUMmerPlot  Quast  RNA  TopHat  WGS
+[amanj@r34 amanj]$ cd maker/
+[amanj@r34 maker]$ ls
+augustus_results  backup_first_maker2_run  backup_second_maker2_run  maker2
+[amanj@r34 maker]$ cd augustus_results/
+[amanj@r34 augustus_results]$ ls
+NW_015504334%2E1.gff                                      NW_015504334%2E1.maker.transcripts.fasta
+NW_015504334%2E1.maker.augustus_masked.proteins.fasta     run.log
+NW_015504334%2E1.maker.augustus_masked.transcripts.fasta  theVoid.NW_015504334.1
+NW_015504334%2E1.maker.proteins.fasta
+[amanj@r34 augustus_results]$ cd ../backup_first_maker2_run/
+[amanj@r34 backup_first_maker2_run]$ ls
+Maker2.sh        maker_evm.ctl  maker_opts.ctl          sel2_NW_015504334.fna           slurm-3022963.out
+maker_bopts.ctl  maker_exe.ctl  protein_sequence.fasta  sel2_NW_015504334.maker.output
+[amanj@r34 backup_first_maker2_run]$ head sel2_NW_015504334.fna 
+>NW_015504334.1
+CCTGACTCCTGGCAGGCCTCGCTGTTGGGGTatatcccctccaccccctccacagtGGCC
+TCTAAGGACCTCCCCCTCTTGGATGAGGGCCCTTGAGGGGCTGCCCCAGAACCGGGAGGT
+GCCTCGGCCCACTAAAGGCTTCTGAGGAATTCCCAAGGGTGTGGCCACAAGGGCAGTAAA
+AATCATGGTGTGATTTTTACACCATGTGTTAGTTTCACATGTTCCCTGTCTGGGACCGAG
+GGAGAGGCAGGTTCagagtctccctccctccaccggCTTCCTCTGCCCTCCGGGCGTCAG
+AGTCCCTAGTTCACTGTCACCCAGAGAAAGATGCTCCGGGAACATGTCAGGGTAGGTTGT
+CATGTGAAGGTTCTGGGAAGCTTCTACTTgcggtgttttttttttcaattttctcctaag
+gatattttttctattttcagagagagtggacgggggagagaaagagagagagagagagag
+agNggagggagggagagaaacatcgatgtgagagacgcacACCAATTGGTCGCCTCCggc
+[amanj@r34 backup_first_maker2_run]$ cd ..
+[amanj@r34 maker]$ ls
+augustus_results  backup_first_maker2_run  backup_second_maker2_run  maker2
+[amanj@r34 maker]$ cd ..
+[amanj@r34 amanj]$ cd incRNA/
+[amanj@r34 incRNA]$ ls
+incRNA_Blast_out                              NW_015504334%2E1.maker.transcripts.fasta.nin
+NW_015504334%2E1.maker.transcripts.fasta      NW_015504334%2E1.maker.transcripts.fasta.nsq
+NW_015504334%2E1.maker.transcripts.fasta.nhr  Sequences_lncrnadb_27Jan2015.fasta
+[amanj@r34 incRNA]$ mkdir scafTest
+[amanj@r34 incRNA]$ cd scafTest/
+[amanj@r34 scafTest]$ ls
+[amanj@r34 scafTest]$ cp /home/amanj/amanj/maker/backup_first_maker2_run/sel2_NW_015504334.fna .
+[amanj@r34 scafTest]$ ls
+sel2_NW_015504334.fna
+[amanj@r34 scafTest]$ #
+[amanj@r34 scafTest]$ #
+[amanj@r34 scafTest]$ #
+[amanj@r34 scafTest]$ makeblastdb -in sel2_NW_015504334.fna -dbtype nucl 
+
+
+Building a new DB, current time: 05/17/2018 11:45:52
+New DB name:   /pica/h1/amanj/amanj/incRNA/scafTest/sel2_NW_015504334.fna
+New DB title:  sel2_NW_015504334.fna
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 1 sequences in 0.0591149 seconds.
+[amanj@r34 scafTest]$ ls
+sel2_NW_015504334.fna  sel2_NW_015504334.fna.nhr  sel2_NW_015504334.fna.nin  sel2_NW_015504334.fna.nsq
+[amanj@r34 scafTest]$ blastn -query /home/amanj/amanj/incRNA/Sequences_lncrnadb_27Jan2015.fasta -db sel2_NW_015504334.fna -out incRNA_Blast_out -outfmt 7
+Warning: [blastn] lcl|Query_19 sal-rna1_hg_1: Warning: Sequence contains no data 
+Warning: [blastn] lcl|Query_89 gacat1_hg_1: Warning: Sequence contains no data 
+Warning: [blastn] lcl|Query_150 asar6_hg_1: Warning: Sequence contains no data 
+Warning: [blastn] lcl|Query_154 MHM-lncRNA_gg_2: Warning: Sequence contains no data 
+Warning: [blastn] lcl|Query_171 nest_mm_1: Warning: Sequence contains no data 
+Warning: [blastn] lcl|Query_173 linc00237_hg_1: Warning: Sequence contains no data 
+Warning: [blastn] lcl|Query_263 ctbp1-as_hg_1: Warning: Sequence contains no data 
+[amanj@r34 scafTest]$ ls
+incRNA_Blast_out       sel2_NW_015504334.fna.nhr  sel2_NW_015504334.fna.nsq
+sel2_NW_015504334.fna  sel2_NW_015504334.fna.nin
+[amanj@r34 scafTest]$ less incRNA_Blast_out 
+[amanj@r34 scafTest]$ grep "Field" incRNA_Blast_out
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+[amanj@r34 scafTest]$ less incRNA_Blast_out 
+[amanj@r34 scafTest]$ cd ../
+incRNA_Blast_out                              NW_015504334%2E1.maker.transcripts.fasta.nsq
+NW_015504334%2E1.maker.transcripts.fasta      scafTest/
+NW_015504334%2E1.maker.transcripts.fasta.nhr  Sequences_lncrnadb_27Jan2015.fasta
+NW_015504334%2E1.maker.transcripts.fasta.nin  
+[amanj@r34 scafTest]$ cd ../
+[amanj@r34 incRNA]$ grep "Field" incRNA_Blast_out
+[amanj@r34 incRNA]$ cd scafTest/
+[amanj@r34 scafTest]$ less incRNA_Blast_out 
+[amanj@r34 scafTest]$ less ../../
+CHIP/       HTSeq/      incRNA/     maker/      MUMmerPlot/ Quast/      RNA/        TopHat/     WGS/
+[amanj@r34 scafTest]$ less ../../maker/
+augustus_results/         backup_first_maker2_run/  backup_second_maker2_run/ maker2/
+[amanj@r34 scafTest]$ less ../../maker/augustus_results/
+NW_015504334%2E1.gff                                      NW_015504334%2E1.maker.transcripts.fasta
+NW_015504334%2E1.maker.augustus_masked.proteins.fasta     run.log
+NW_015504334%2E1.maker.augustus_masked.transcripts.fasta  theVoid.NW_015504334.1/
+NW_015504334%2E1.maker.proteins.fasta                     
+[amanj@r34 scafTest]$ less ../../maker/augustus_results/NW_015504334%2E1.gff 
+[amanj@r34 scafTest]$ 
