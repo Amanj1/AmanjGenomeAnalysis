@@ -1,0 +1,34 @@
+log2 fold change (MAP): condition Hindlimbs vs Forelimbs 
+Wald test p-value: condition Hindlimbs vs Forelimbs 
+DataFrame with 77 rows and 6 columns
+                                                              baseMean log2FoldChange     lfcSE       stat      pvalue       padj
+                                                             <numeric>      <numeric> <numeric>  <numeric>   <numeric>  <numeric>
+augustus_masked-NW_015504334.1-processed-gene-0.10-mRNA-1     0.000000             NA        NA         NA          NA         NA
+augustus_masked-NW_015504334.1-processed-gene-0.13-mRNA-1    16.647403     0.09581317 0.2651701  0.3613271   0.7178549  0.8353221
+augustus_masked-NW_015504334.1-processed-gene-0.14-mRNA-1   156.603705    -0.10019276 0.1587368 -0.6311881   0.5279175  0.7405843
+augustus_masked-NW_015504334.1-processed-gene-10.54-mRNA-1  864.874852     0.07093957 0.1595839  0.4445284   0.6566606  0.7929486
+augustus_masked-NW_015504334.1-processed-gene-11.47-mRNA-1    7.883691     0.29257983 0.2556116  1.1446267   0.2523638  0.4750378
+...                                                                ...            ...       ...        ...         ...        ...
+maker-NW_015504334.1-augustus-gene-6.3-mRNA-1                  0.00000             NA        NA         NA          NA         NA
+maker-NW_015504334.1-augustus-gene-6.4-mRNA-1                287.91927     -0.2974479 0.1786791  -1.664704 0.095971744 0.25476685
+maker-NW_015504334.1-augustus-gene-6.6-mRNA-1              21319.66221     -0.3725089 0.1333601  -2.793256 0.005218034 0.04770774
+maker-NW_015504334.1-augustus-gene-8.8-mRNA-1                 87.93546      0.4789584 0.1891439   2.532243 0.011333551 0.07020259
+maker-NW_015504334.1-augustus-gene-9.1-mRNA-1               2200.59648     -0.1914350 0.1639524  -1.167625 0.242957899 0.47119108
+> res_0.05= subset(res, padj<0.05)
+> res_0.05_ordered <- res_0.05[order(res0.05$padj),]
+Error in eval(expr, envir, enclos) : object 'res0.05' not found
+> res_0.05_ordered <- res_0.05[order(res_0.05$padj),]
+> res_0.05_ordered
+
+log2 fold change (MAP): condition Hindlimbs vs Forelimbs 
+Wald test p-value: condition Hindlimbs vs Forelimbs 
+DataFrame with 7 rows and 6 columns
+                                                           baseMean log2FoldChange     lfcSE      stat       pvalue         padj
+                                                          <numeric>      <numeric> <numeric> <numeric>    <numeric>    <numeric>
+maker-NW_015504334.1-augustus-gene-22.6-mRNA-1             162.6242     -1.7767884 0.2656047 -6.689598 2.237848e-11 1.432223e-09
+maker-NW_015504334.1-augustus-gene-11.39-mRNA-1            225.1055     -0.8008068 0.1827091 -4.382961 1.170772e-05 3.746469e-04
+augustus_masked-NW_015504334.1-processed-gene-8.9-mRNA-1    94.6347      0.8306435 0.2074322  4.004409 6.217271e-05 1.326351e-03
+maker-NW_015504334.1-augustus-gene-5.12-mRNA-1            1897.5399     -0.5035442 0.1471451 -3.422094 6.214093e-04 9.942549e-03
+maker-NW_015504334.1-augustus-gene-4.57-mRNA-1             206.2922     -0.4885699 0.1590942 -3.070947 2.133811e-03 2.731278e-02
+maker-NW_015504334.1-augustus-gene-0.6-mRNA-1              388.6283      0.4111961 0.1443659  2.848290 4.395482e-03 4.688514e-02
+maker-NW_015504334.1-augustus-gene-6.6-mRNA-1            21319.6622     -0.3725089 0.1333601 -2.793256 5.218034e-03 4.770774e-02
