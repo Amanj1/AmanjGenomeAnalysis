@@ -40,18 +40,30 @@ Log:
 
 2018 May 19: Structuring the files again. Uploading the modified gff (for CHIP). Got IGV to work on interactive node in UPPMAX did some testing with CHIP seq data (not yet finished). I would need to look into the files and choose which to present. 
 
+2018 May 21: I noticed functional annotation was missing. I used the EggNOGmapper online and used the maker protein fasta from maker2 and got an output.  It gives a name of gene that indicates it function and statistics. I also updated the activity diagram. 
+
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Paper II - Eckalbar et al. 2016 
+
 Basic analyses:
+
 ● Genome assembly of Illumina reads.
+
 ● Assembly quality assessment.
+
 ● Transcriptome assembly.
+
 ● Structural and functional annotation.
+
 ● Differential expression analyses.
+
 ● Biological interpretation of the results.
+
 Extra analyses:
+
 ● Mapping of ChIP-seq reads and visualization.
+
 ● Analyses of long non-coding RNAs.
 
 
