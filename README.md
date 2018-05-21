@@ -8,7 +8,7 @@ Log:
 
 2018 Apr 7-11: Sketching project plan and trying to find information about methods used.
 
-2018 Apr 11: Adding activity diagram for the lab. The activity diagram simplifies alot for me and is easier to follow. It contains most of the relevant informations I gathered from the studentmanual the teacher assistants provided in the student protal. 
+2018 Apr 11: Adding activity diagram for the lab. The activity diagram simplifies a lot for me and is easier to follow. It contains most of the relevant information I gathered from the studentmanual provided in the student protal. 
 
 2018 Apr 13-18: Created scripts SOAPdenovo genome assembly, FASTQC (quality controller for RNA files) and Trimmomatic (Trimming bad RNA data). These script could not be tested because uppmax was under maintenance.
 
