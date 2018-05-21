@@ -34,7 +34,7 @@ Log:
 
 2018 May 15: Structuring files in github again. Working on HTSeq script.
 
-2018 May 16: Had trouble with HTSeq I got help form TAs where we modified the the files form maker removing the part wich contains the fasta. I still had issues running it but this time it was not the data from the annotation. After help from TAs and several testing methods the fault was found within the data I recived from previous TopHat script. A new sbatch script for TopHat was created with 4 cores instead of the recomended 2 cores to finish the script faster (~1h). I also did some work with incRNA today but had trouble running the script.
+2018 May 16: Had trouble with HTSeq I got help form TAs where we modified the the files form maker removing the part wich contains the fasta. I still had issues running it but this time it was not the data from the annotation. After help from TAs and several testing methods the fault was found within the data I recived from previous TopHat script. A new sbatch script for TopHat was created with 4 cores instead of the recomended 2 cores to finish the script faster (~1h). I also did some work with incRNA today but had trouble running the script. I also got help to finish MUMmerplot today, but results were not good. 
 
 2018 May 17: The issue with incRNA was missing some flags. The result from the annotation was zero hits, but when using the reference genome we got 4hits. DESeq was also finished today with the help from TAs and plots for heatmap from DESeq. Was also working on IGV for CHIP sequence had some trouble with the gff file from the annotation because it contained alot of information for were the CHIP peaks occured. I got help for modifing it so it only contains the gene names of each area. 
 
