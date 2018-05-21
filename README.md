@@ -2,7 +2,7 @@
 
 ## Project Plan in activity diagram format
 
-![activity diagram_new](https://user-images.githubusercontent.com/10686927/40007959-a43c58de-578d-11e8-9e8f-2d1f1c625701.png)
+![activity diagram](https://user-images.githubusercontent.com/10686927/40333041-ff943cde-5d45-11e8-97de-5ae35d35df8d.png)
 
 Log:
 
