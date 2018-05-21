@@ -40,6 +40,20 @@ Log:
 
 2018 May 19: Structuring the files again. Uploading the modified gff (for CHIP). Got IGV to work on interactive node in UPPMAX did some testing with CHIP seq data (not yet finished). I would need to look into the files and choose which to present. 
 
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Paper II - Eckalbar et al. 2016 
+Basic analyses:
+● Genome assembly of Illumina reads.
+● Assembly quality assessment.
+● Transcriptome assembly.
+● Structural and functional annotation.
+● Differential expression analyses.
+● Biological interpretation of the results.
+Extra analyses:
+● Mapping of ChIP-seq reads and visualization.
+● Analyses of long non-coding RNAs.
+
 
 
 
