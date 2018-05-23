@@ -1,0 +1,32 @@
+
+# BLASTN 2.6.0+
+# Query: neat1_homosapiens_2
+# Database: sel2_NW_015504334.fna
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+neat1_homosapiens_2	NW_015504334.1	78.761	113	24	0	15888	16000	48476	48588	3.99e-13	76.8
+#####################################################################################################################################################
+
+# BLASTN 2.6.0+
+# Query: GHET1_hg_1
+# Database: sel2_NW_015504334.fna
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+GHET1_hg_1	NW_015504334.1	80.952	84	11	3	1701	1780	1561803	1561721	8.87e-10	62.1
+#####################################################################################################################################################
+
+# BLASTN 2.6.0+
+# Query: GHET1_hg_2
+# Database: sel2_NW_015504334.fna
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+GHET1_hg_2	NW_015504334.1	80.952	84	11	3	1672	1751	1561803	1561721	9.11e-10	62.1
+#####################################################################################################################################################
+
+# BLASTN 2.6.0+
+# Query: emx2os_homosapiens_1
+# Database: sel2_NW_015504334.fna
+# Fields: query acc.ver, subject acc.ver, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 1 hits found
+emx2os_homosapiens_1	NW_015504334.1	91.667	48	4	0	4346	4393	2027072	2027119	7.68e-11	67.6
+
