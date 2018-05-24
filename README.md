@@ -40,7 +40,7 @@
 
 2018 May 19: Structuring the files again. Uploading the modified gff (for CHIP). Got IGV to work on the interactive node in UPPMAX did some testing with CHIP seq data (not yet finished). I would need to look into the files and choose which to present. 
 
-2018 May 21: I noticed functional annotation was missing. I used the EggNOGmapper online and used the maker protein fasta from maker2 and got an output. It gives a list of names of the genes that indicates it function and statistics. I also updated the activity diagram. 
+2018 May 21: I noticed functional annotation was missing. I used the EggNOGmapper online and used the maker protein fasta from maker2 and got an output. It gives a list of names of the genes that indicates the function and statistics. I also updated the activity diagram. 
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
