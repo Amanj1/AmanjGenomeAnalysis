@@ -42,6 +42,7 @@
 
 2018 May 21: I noticed functional annotation was missing. I used the EggNOGmapper online and used the maker protein fasta from maker2 and got an output. It gives a list of names of the genes that indicates the function and statistics. I also updated the activity diagram. 
 
+2018 May 23: Today I was looking into IGV and was comparing diffrent tissue sample (Hindlimbs and Forelimbs) to see if they had any diffrences for the protein binding sites from the ChIP-seq data. Most of the samples I was looking into had the same pattern of ChIP-seq peaks. IGV was working very slow, so I did not do further checks like counting the areas and to see if the peaks occurred in all the genes or outside (by comparing it with the annotation data). I ended up comparing 2 hindlimbs and 2 forelimbs with two different positions inside two different genes. 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ## Paper II - Eckalbar et al. 2016 
