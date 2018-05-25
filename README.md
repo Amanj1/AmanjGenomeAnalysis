@@ -68,6 +68,73 @@ ________________________________________________________________________________
 ● Analyses of long non-coding RNAs.
 
 
+#-----------------2018-05-25----------------------
+
+## Evaluation of assembly:
+I made two assembly evalution one with Quast and the other one with MUMmerplot.
+
+###Quast
+So my N50 in comparison with the total lenght is very small (2916) of the total length which was 2103624.
+The GC content looked good and was similar to the reference (49,27% to 49,44%).
+
+###MUMmerplot
+![MUMmerplot](https://github.com/Amanj1/AmanjGenomeAnalysis/blob/master/Assembly%20evaluation%20results/MUMmerplot/Screenshot_ref_qry.png?raw=true)
+
+However the MUMmerplot result was very bad. The MUMmerplot showed that the assembly was far from diagonal. I continued using the reference genome in all of the next steps. 
+
+###FastQC and Trimmonatic
+The initial run of the raw data from RNA showed that it needed to be trimmed I used trimmonatic with the standard flags. The second run of FastQC should an improvement.
+
+###Trinity
+So, RNA I used where from the embroynic stage during, and trinity gave me a transcrimptome of the RNA expression during this stage. Now I had all the files to do the annotion. 
+
+###Annotion maker2
+The input was Mouse and human protein sequence, transcriptome assembly and genome assembly.
+The output was various files that I could use for differential expression, lncRNA and the functional annotation.
+The purpose of the annotation is finding which part of the genome is coding the proteins and what kind of proteins. 
+
+The Authors found 24,239 genes in the annotion and I got 77 genes. This is because my selection 2 transcriptome is smaller and I also guess that maybe I don't have the whole WGS. 
+
+Notes: 
+The second run in annotion was messed up because I had zero genes in it. So I did ran agustus with the first maker run which was good. 
+
+###TopHat
+I did several runs with TopHat first I think I was using the command wrong and the 2 other runs was because I did not change the amount of time for the slurm job. When I did HTSeq I also had issues with it and I got help and then I had to redo TopHat again excluding the single-end. 
+
+###HTSeq
+Gave me some table with results for each tissue I did not look into it so much I just continued on to the next step. 
+
+###DESeq
+I Used library from R to create the diffrential expression hindlimbs vs forelimbs. I only collected the data that was 5% or less significant and created a heatmap. I got 7 genes of total 77 genes. 
+
+###Functional annotion
+I did functional annotion to find out what each gene from the table produced in DESeq had for function. One of the genes was not included in the functional annotion, 3 of them was for transmembrane proteins and 3 of them are active in embroyinc development of tissue. 
+
+Transcription factor: This is important for gene expression and could have a function for limb development.
+
+Homeobox genes: These genes usually deals with body architecture and are present during early embryonic development. This is both interesting and not surprising that they are overexpressed. 
+
+Protein phosphatase-1: These are involved in a lot of developmental processes. This could be important, but may not be interesting, however, it is interesting  for bat wing development.
+
+###lncRNA
+For lncRNA I Used blast. 
+My First try was with lncRNA from Human and Mouse as Database and transcript file from the annotation. 
+This Gave 0 hits. 
+And in my Second try I used the same DB and instead of the transcript file I used the WGS, which gave me 4 hits.
+
+The first try is more important than the second because it involves the RNA expression during embryonic stage. Because I had only 77 genes from the annotion it could explain why I had 0 hits for my first try, compared with authors (227 hits). 
+
+###ChIP-seq
+I used the software BWA for ChIP-seq. I had some issues with the sam when trying it in IGV. Later I converted it to bam files, sorted the files and indexed them so I could use them for IGV. When I looked in NCBI I only found the tissue samples for ChIP-seq so I had no idea about the active and repessive proteins in the seqences. And I didnt not know what the diffrences between the peaks were to point out which one was the repressor and which was the activator. In this case the protein was part of a histone modication I think because they mentiond H3 in the paper. 
+
+The pattern for all the samples I looked into in IGV was identical (peaks) and positions and IGV was very slow to run. 
+
+I detected a number of Histone binding sites/regulatory regions which also the case for authors, but unfortunary lack of time and tools, no more analysis could be done on these results and data. I don't think IGV is good enough to make a proper analysis of the ChIP-seq, it helps me visualize the regulatory regions but not much more.
+
+
+
+
+
 
 
 
