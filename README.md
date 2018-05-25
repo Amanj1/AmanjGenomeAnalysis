@@ -96,7 +96,7 @@ The purpose of the annotation is finding which part of the genome is coding the 
 The Authors found 24,239 genes in the annotion and I got 77 genes. This is because my selection 2 transcriptome is smaller and I also guess that maybe I don't have the whole WGS. 
 
 Notes: 
-The second run in annotion was messed up because I had zero genes in it. So I did ran agustus with the first maker run which was good. 
+The second run in annotion was messed up because I had zero genes in it. So I ran agustus with the first maker run which was good. 
 
 ### TopHat
 I did several runs with TopHat first I think I was using the command wrong and the 2 other runs was because I did not change the amount of time for the slurm job. When I did HTSeq I also had issues with it and I got help and then I had to redo TopHat again excluding the single-end. 
